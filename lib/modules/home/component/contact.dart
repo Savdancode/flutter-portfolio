@@ -18,13 +18,6 @@ class ContactComponent extends StatelessWidget {
       "icon": "assets/images/svg/ic_linkin.svg",
       "external_link": "",
     },
-    {
-      "label": "email",
-      "value": "",
-      "icon": "assets/images/svg/ic_email.svg",
-      "external_link": "",
-      "scheme": "mailto",
-    },
 
     {
       "label": "location",
