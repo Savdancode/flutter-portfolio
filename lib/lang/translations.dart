@@ -8,7 +8,6 @@ class AppTranslations extends Translations {
       'about': 'About',
       'services': 'Services',
       'contact': 'Contact',
-      'soun_savdan': 'Soun Savdan',
       'phnom_penh': "Phnom Penh",
       'download_resume': "Download Resume",
       'mobile_app_developer': 'Mobile App Developer',

@@ -12,67 +12,6 @@ class AboutConponent extends StatelessWidget {
     "about_item5",
     "about_item6",
   ];
-  static final listReleasedApps = [
-    {
-      "name": "Phum Electronics",
-      "asset": "assets/images/jpg/phum_electronics.jpg",
-      "app_store_url":
-          "https://apps.apple.com/kh/app/phum-electronics/id1599863645",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=com.bizsolution.phumelectronic&hl=en",
-      "desc":
-          "On Phum Electronic E-commerce Mobile App you can purchase all the product",
-    },
-    {
-      "name": "Toys & Me",
-      "asset": "assets/images/jpg/toysnme.jpg",
-      "app_store_url": "https://apps.apple.com/na/app/toys-me/id1628978037",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=com.bizsolution.phumelectronic&hl=en",
-      "desc":
-          "Toys & Me online store is more than just toys with the best prices and the most enjoyable shopping experience. It's easy to order your favorite toys on toysnme.com.kh",
-    },
-    {
-      "name": "GGear Wholesale App",
-      "asset": "assets/images/jpg/ggearwholesale.jpg",
-      "app_store_url":
-          "https://apps.apple.com/kh/app/ggear-wholesale-app/id6468434417",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=biz.bizsolution.ggearwholesale&hl=en",
-      "desc":
-          "Wholesale app is the platform that can view product, set schedule, view sale target and we can order product from this application to the shop.",
-    },
-    {
-      "name": "Phum Management Portal",
-      "asset": "assets/images/jpg/management_portal.jpg",
-      "app_store_url":
-          "https://apps.apple.com/kh/app/phum-management/id1335493828",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=com.phumdigital.schoolreport",
-      "desc":
-          "Phum School Report is a simple and easy way to view your school's statistics on daily fee collection, teachers, and students",
-    },
-
-    {
-      "name": "Phum Association",
-      "asset": "assets/images/jpg/phum_association.jpg",
-      "app_store_url":
-          "https://apps.apple.com/kh/app/phum-association/id6612023162",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=kh.com.bizsolution.phumassociation",
-      "desc":
-          "Phum Association is your gateway to joining and engaging with associations effortlessly. Discover, register, and participate in events and workshops through a single, user-friendly platform. With seamless integration of ABA KHQR payment, Phum Association ensures a secure and hassle-free experience",
-    },
-    {
-      "name": "YEAC",
-      "asset": "assets/images/jpg/yeac.jpg",
-      "app_store_url": "https://apps.apple.com/kh/app/yeac/id967149956",
-      "play_store_url":
-          "https://play.google.com/store/apps/details?id=biz.bizsolution.bic.yeac&hl=en",
-      "desc":
-          "The Young Entrepreneurs Association of Cambodia (YEAC) App is the platform that connects the young entrepreneurs in Cambodia to build up their business network and share experiences.",
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
@@ -158,7 +97,7 @@ class AboutConponent extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             itemBuilder: (context, i) => _buildProduct(i, context, screenWidth),
             separatorBuilder: (context, i) => SizedBox(height: 10),
-            itemCount: listReleasedApps.length,
+            itemCount: 6,
           )
           : SizedBox(
             height: 200,
@@ -167,20 +106,63 @@ class AboutConponent extends StatelessWidget {
               itemBuilder:
                   (context, i) => _buildProduct(i, context, screenWidth),
               separatorBuilder: (context, i) => SizedBox(width: 10),
-              itemCount: listReleasedApps.length,
+              itemCount: 6,
             ),
           );
 
-  Widget _buildProduct(int i, BuildContext context, double screenWidth) =>
-      Container(
-        padding: EdgeInsets.all(10),
-        width: 500,
-        height: 200,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Theme.of(context).canvasColor,
+  Widget _buildProduct(
+    int i,
+    BuildContext context,
+    double screenWidth,
+  ) => Container(
+    padding: EdgeInsets.all(10),
+    width: 500,
+    height: 200,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      //color: Colors.red,
+    ),
+    child: Row(
+      children: [
+        Container(
+          width: screenWidth <= 600 ? 100 : 200,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              image: AssetImage('assets/images/png/food_app.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
-      );
+        SizedBox(width: 10),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Food App',
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.amber,
+                ),
+              ),
+              SizedBox(height: 5),
+              Text(
+                'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontSize: 14,
+                  color: Colors.grey[600],
+                  overflow: TextOverflow.ellipsis,
+                ),
+                maxLines: 6,
+              ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
   Widget _actionBtn(
     BuildContext context, {
     required String title,

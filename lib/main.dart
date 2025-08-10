@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return Obx(
       () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Soun Savdan',
+        title: 'Dev Tech',
         theme: lightTheme,
         darkTheme: darkTheme,
         themeMode: appController.theme,

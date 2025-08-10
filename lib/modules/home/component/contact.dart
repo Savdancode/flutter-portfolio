@@ -8,19 +8,19 @@ class ContactComponent extends StatelessWidget {
   static final listContactMe = [
     {
       "label": "telegram",
-      "value": "+85598883435",
+      "value": "+855 11111111",
       "icon": "assets/images/svg/ic_telegram.svg",
       "external_link": "",
     },
     {
       "label": "linkedin",
-      "value": "Soun Savdan",
+      "value": "Tech Dev",
       "icon": "assets/images/svg/ic_linkin.svg",
       "external_link": "",
     },
     {
       "label": "email",
-      "value": "savdan@gmail.com",
+      "value": "",
       "icon": "assets/images/svg/ic_email.svg",
       "external_link": "",
       "scheme": "mailto",
@@ -70,14 +70,11 @@ class ContactComponent extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(
-                            right: 10,
-                            left: i != 0 ? 5 : 0,
-                          ),
+                          padding: EdgeInsets.only(right: 10, left: 0),
                           child: SvgPicture.asset(
                             ContactComponent.listContactMe[i]['icon']
                                 .toString(),
-                            width: i == 0 ? 30 : 25,
+                            width: 25,
                             fit: BoxFit.cover,
                           ),
                         ),

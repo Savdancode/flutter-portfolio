@@ -46,7 +46,7 @@ class HomeComponent extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
-            'soun_savdan'.tr,
+            "Dev Tech",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
               fontWeight: FontWeight.w900,
               fontSize: 30,
